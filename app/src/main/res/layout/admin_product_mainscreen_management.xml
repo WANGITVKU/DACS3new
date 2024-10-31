@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_bar"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:background="@drawable/navigation_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wayback_icon_order_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="Quản lý sản phẩm"
+            android:textAppearance="@style/title_screen"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/wayback_icon_order_detail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.904" />
+
+        <View
+            android:id="@+id/add_new_product"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:background="@drawable/plus_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.908"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/none"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_below="@id/first_bar"
+        android:background="#F5F5FA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_box_product_management"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/search_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp">
+
+                <View
+                    android:id="@+id/search_icon_admin_product"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/search_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/search_text_admin_product"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@null"
+                    android:hint="Nhập từ khóa cần tìm"
+                    android:inputType="text"
+                    android:textAppearance="@style/placeholder"
+                    android:textColor="#808089"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/search_icon_admin_product"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filter_sort_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_input">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/filter_box"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/normal_box"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/filter_icon_admin_product"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/filter_icon"
+                        app:layout_constraintBottom_toBottomOf="@id/filter_box"
+                        app:layout_constraintStart_toStartOf="@id/filter_box"
+                        app:layout_constraintTop_toTopOf="@id/filter_box" />
+
+                    <TextView
+                        android:id="@+id/label_filter_admin_product"
+                        android:layout_width="25dp"
+                        android:layout_height="21dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:lineHeight="21sp"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Lọc"
+                        android:textAppearance="@style/label_filter"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/filter_box"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/filter_icon_admin_product"
+                        app:layout_constraintTop_toTopOf="@id/filter_box" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/chip"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/blue_box"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/sort_icon_admin_product"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/sort_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/label_sort_admin_product"
+                        android:layout_width="60dp"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Sắp xếp"
+                        android:textAppearance="@style/label_sort_"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/sort_icon_admin_product"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_box_product_management">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewPopular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarPopular1"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewPopular" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shopping_bo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box1_admin_product"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+            app:layout_constraintEnd_toStartOf="@id/box2_admin_product"
+            android:layout_width="100dp"
+            android:layout_height="56dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/product_manage"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/product_management_icon_blue"
+                app:layout_constraintBottom_toTopOf="@id/product_manage_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/product_manage_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Quản lý sản phẩm"
+                android:textColor="@color/blue"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/product_manage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box2_admin_product"
+            app:layout_constraintStart_toEndOf="@id/box1_admin_product"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+            app:layout_constraintEnd_toStartOf="@id/box3_admin_product"
+            android:layout_width="100dp"
+            android:layout_height="56dp">
+
+            <View
+                android:layout_marginTop="2dp"
+                android:id="@+id/product_customer_management"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/customer_management_icon_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/customer_manage_text"/>
+
+            <TextView
+                android:id="@+id/customer_manage_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Quản lý khách hàng"
+                android:textColor="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/product_customer_management"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box3_admin_product"
+            app:layout_constraintStart_toEndOf="@id/box2_admin_product"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+            app:layout_constraintEnd_toStartOf="@id/box4_admin_product"
+            android:layout_width="100dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/product_order_management"
+                android:layout_width="19dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/order_management_icon_grey"
+                app:layout_constraintBottom_toTopOf="@id/order_manage_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/order_manage_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Quản lý đơn hàng"
+                android:textColor="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/product_order_management"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box4_admin_product"
+            android:layout_width="100dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/box3_admin_product"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar">
+
+            <View
+                android:id="@+id/product_other_management"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/other_icon_grey"
+                app:layout_constraintBottom_toTopOf="@id/other_manage_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/other_manage_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Thông tin khác"
+                android:textColor="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_other_management" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

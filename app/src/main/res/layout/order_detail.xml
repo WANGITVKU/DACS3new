@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_bar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@drawable/navigation_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/wayback_icon_user_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/order_detail_return_view"
+                android:layout_width="19dp"
+                android:layout_height="29dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/wayback_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/user_info_label"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="Chi tiết đơn hàng"
+            android:textAppearance="@style/title_screen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/wayback_icon_user_info"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/cart_order_detail"
+            android:visibility="invisible"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            app:layout_constraintTop_toTopOf="@id/first_bar"
+            app:layout_constraintBottom_toBottomOf="@id/first_bar"
+            app:layout_constraintEnd_toStartOf="@id/navigation_box"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/cart_image"
+            tools:layout_editor_absoluteX="296dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <RelativeLayout
+            android:visibility="invisible"
+            android:id="@+id/navigation_box"
+            android:layout_width="72dp"
+            android:layout_height="27dp"
+            android:layout_toRightOf="@id/cart_order_detail"
+            android:background="@drawable/_navigation_box"
+            app:layout_constraintBottom_toBottomOf="@id/first_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="16dp"
+            app:layout_constraintTop_toTopOf="@id/first_bar">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/more_info_order_detail"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/more_info"
+                android:clipToOutline="true" />
+
+            <View
+                android:id="@+id/thin"
+                android:layout_width="2dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/more_info_order_detail"
+                android:background="@drawable/thin" />
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/escape_order_detail"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/thin"
+                android:background="@drawable/escape"
+                android:clipToOutline="true" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@id/first_bar">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_login_user_info"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Thông tin đơn hàng"
+                android:textAppearance="@style/title_ship"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_info_user_info_box"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_login_user_info">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/username_box_user_info"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/username_text_user_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Mã đơn hàng"
+                        android:textAppearance="@style/label_ship"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/customer_order_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="00000000"
+                        android:textAppearance="@style/label_ship"
+                        android:textStyle="bold"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.375" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="#EBEBF0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/username_box_user_info" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_day_box"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/line1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/text_order_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Ngày đặt hàng"
+                        android:textAppearance="@style/label_ship"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/order_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginRight="16dp"
+                        android:textStyle="bold"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="00:00, 00/00/0000"
+                        android:textAppearance="@style/label_ship"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="#EBEBF0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/order_day_box" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/order_status_detail_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line2">
+
+                    <TextView
+                        android:id="@+id/text_order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Trạng thái đơn hàng"
+                        android:textAppearance="@style/label_ship"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Đã giao"
+                        android:textAppearance="@style/label_ship"
+                        android:textStyle="bold"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/title_order_tracking"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="top"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="5sp"
+                android:text="Theo dõi đơn hàng"
+                android:textAppearance="@style/title_ship"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_info_user_info_box" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_tracking_box"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_order_tracking">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_transport_uint_box"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/order_transport_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Giao hàng thường"
+                        android:textAppearance="@style/label_ship"
+                        android:translationY="-2.03sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="#EBEBF0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/order_transport_uint_box" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginBottom="12dp"
+                    android:id="@+id/order_tracking_status_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/shape_line"
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <View
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:id="@+id/circle_blue"
+                            android:background="@drawable/circle_blue"
+                            android:layout_marginTop="2dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"/>
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="30dp"
+                            android:background="@color/grey"
+                            android:layout_marginBottom="2dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/order_tracking_box_inside"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/shape_line"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tracking_status_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="21dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Đã giao"
+                            android:textAppearance="@style/label_ship"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tracking_status_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="21dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="00:00, 00/00/0000"
+                            android:textAppearance="@style/original_price"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tracking_status_text" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/transport_info_order_detail"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Thông tin vận chuyển"
+                android:textAppearance="@style/title_ship"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintTop_toBottomOf="@id/order_tracking_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transport_info_order_detail_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintTop_toBottomOf="@id/transport_info_order_detail"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="38dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transport_info_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/location_icon"
+                        android:layout_width="16dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/location_image"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/next_arrow_order_detail">
+                        <View
+                            android:visibility="invisible"
+                            android:layout_marginHorizontal="32dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_width="11dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/next_arrow" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/box_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginVertical="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/next_arrow_order_detail"
+                        app:layout_constraintStart_toEndOf="@id/location_icon"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/label_ship"
+                            android:layout_width="0dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Địa chỉ nhận hàng"
+                            android:textAppearance="@style/label_ship"
+                            android:translationY="-2.03sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/address_ship"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="288 Erie Street South Unit D, Leamington, Ontario"
+                            android:textAppearance="@style/label_ship"
+                            android:textStyle="bold"
+                            android:translationY="-2.03sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.242"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/label_ship" />
+
+                        <TextView
+                            android:id="@+id/label_ship_description_order_detail"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="3sp"
+                            android:text="Nick • 0969696969"
+                            android:textAppearance="@style/description"
+                            android:translationY="-1.74sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/address_ship" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#EBEBF0"
+                    android:layout_marginHorizontal="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transport_info_box" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transport_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line5">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/item_image"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="10dp">
+
+                            <ImageView
+                                android:id="@+id/item_image_order_detial"
+                                android:layout_width="24dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/a1" />
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/item_image"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/transport_unit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Dịch vụ vận chuyển"
+                            android:textAppearance="@style/label_ship"
+                            android:translationY="-2.03sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/type_of_transport_unit_text_order_detail"
+                            android:layout_width="0dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Giao Hàng Nhanh"
+                            android:textAppearance="@style/label_ship"
+                            android:textStyle="bold"
+                            android:translationY="-2.03sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.242"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/transport_unit_text" />
+
+                        <TextView
+                            android:id="@+id/time_of_transport_order_detail"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="top"
+                            android:lineSpacingExtra="3sp"
+                            android:text="Từ 2 đến 5 ngày"
+                            android:textAppearance="@style/description"
+                            android:translationY="-1.74sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/type_of_transport_unit_text_order_detail" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/product_info_order_detail"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Thông tin sản phẩm"
+                android:textAppearance="@style/title_ship"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintTop_toBottomOf="@id/transport_info_order_detail_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/product_info_order_detail"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:id="@+id/list_product_order_detail"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                android:background="@drawable/cart_box"-->
+<!--                android:layout_marginTop="12dp">-->
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/recycler_view_order_detail"-->
+<!--                    android:layout_marginHorizontal="16dp"-->
+<!--                    android:layout_marginVertical="12dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"/>-->
+<!--                -->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/product_info_order_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/list_product_order_detail"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                android:layout_marginTop="12dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ViewOrder1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </androidx.recyclerview.widget.RecyclerView>
+                <ProgressBar
+                    android:id="@+id/progressBarOrder1"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ViewOrder1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/payment_methods_order_detail"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Phương thức thanh toán"
+                android:textAppearance="@style/title_ship"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintTop_toBottomOf="@id/list_product_order_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/payment_methods_order_detail_box"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintTop_toBottomOf="@id/payment_methods_order_detail">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payment_methods_order_detail_inside"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="12dp">
+
+                    <View
+                        android:id="@+id/image_payment"
+                        android:layout_marginVertical="12dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/momo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/label_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Phương thức thanh toán"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginLeft="8dp"
+                        android:textAppearance="@style/label_ship"
+                        app:layout_constraintStart_toEndOf="@id/image_payment"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/label_payment_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Momo"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:textAppearance="@style/label_ship"
+                        app:layout_constraintStart_toEndOf="@id/image_payment"
+                        app:layout_constraintTop_toBottomOf="@id/label_payment" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="8dp"
+                android:id="@+id/price_box_order_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_methods_order_detail_box"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="37dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/price_box">
+
+                    <TextView
+                        android:id="@+id/label_price_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Giá"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="@style/label_price"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/total_price_order_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="0 đ"
+                        android:textAppearance="@style/label_price"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#EBEBF0"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/price_box" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transport_fee_box"
+                    android:layout_width="0dp"
+                    android:layout_height="37dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line6">
+
+                    <TextView
+                        android:id="@+id/label_transport_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Phí vận chuyển"
+                        android:textAppearance="@style/label_price"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/transport_fee_price_order_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="0 đ"
+                        android:textAppearance="@style/label_price"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#EBEBF0"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transport_fee_box" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="37dp"
+                    app:layout_constraintTop_toBottomOf="@id/line7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/voucher_apply_box">
+
+                    <TextView
+                        android:id="@+id/label_voucher_apply"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Khuyến mãi"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="@style/label_price"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/voucher_apply_price_order_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="- 0 đ"
+                        android:textStyle="bold"
+                        android:layout_marginRight="16dp"
+                        android:textAppearance="@style/data_value"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/line8"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#EBEBF0"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/voucher_apply_box"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/final_price_box">
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/label_final_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Tổng cộng"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="@style/label_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/label_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="Đã bao gồm VAT"
+                        android:textAppearance="@style/description12"
+                        android:lineSpacingExtra="3sp"
+                        android:gravity="top"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/label_final_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="8dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/final_price_order_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="4sp"
+                        android:text="0 đ"
+                        android:textAppearance="@style/label_price"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                app:layout_constraintTop_toBottomOf="@id/price_box_order_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/status_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/fill_blue_box">
+                    <TextView
+                        android:id="@+id/change_order_status_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đổi trạng thái đơn hàng"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textAppearance="@style/cta_apply_0"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="8dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

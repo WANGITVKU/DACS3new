@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddressID"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="72dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toTopOf="@+id/fullname1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fullname1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Nhập địa chỉ nhận hàng"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/fullname"
+        app:layout_constraintStart_toStartOf="@+id/backBtn"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+
+
+    <EditText
+        android:id="@+id/diachi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Địa chỉ cụ thể "
+        app:layout_constraintBottom_toTopOf="@+id/city"
+        app:layout_constraintEnd_toEndOf="@+id/city"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        app:layout_constraintTop_toBottomOf="@+id/fullname" />
+
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Thành phố/Huyện"
+        app:layout_constraintBottom_toTopOf="@+id/tinh"
+        app:layout_constraintEnd_toEndOf="@+id/tinh"
+        app:layout_constraintStart_toStartOf="@+id/tinh"
+        app:layout_constraintTop_toBottomOf="@+id/diachi" />
+
+    <EditText
+        android:id="@+id/tinh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Tỉnh/Thành phố"
+        app:layout_constraintBottom_toTopOf="@+id/sdt"
+        app:layout_constraintEnd_toEndOf="@+id/sdt"
+        app:layout_constraintStart_toStartOf="@+id/sdt"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
+
+
+    <EditText
+        android:id="@+id/sdt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Số điện thoại "
+        app:layout_constraintBottom_toTopOf="@+id/buttonSaveAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/buttonSaveAddress"
+        app:layout_constraintTop_toBottomOf="@+id/tinh" />
+
+
+    <Button
+        android:id="@+id/buttonSaveAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="203dp"
+        android:text="Lưu địa chỉ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <EditText
+        android:id="@+id/fullname"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:hint="Tên người nhận"
+        app:layout_constraintBottom_toTopOf="@+id/diachi"
+        app:layout_constraintEnd_toEndOf="@+id/diachi"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="@+id/diachi"
+        app:layout_constraintTop_toBottomOf="@+id/fullname1" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:text="Tên người nhận"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/diachi"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/fullname" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
